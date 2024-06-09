@@ -5,6 +5,7 @@ import { By } from '@angular/platform-browser';
 
 import { GameResultCardComponent } from './game-result-card.component';
 import { Person, Starship } from '@shared/models';
+import { ChangeDetectionStrategy } from '@angular/core';
 
 describe('GameResultCardComponent', () => {
   let component: GameResultCardComponent;
@@ -13,7 +14,11 @@ describe('GameResultCardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MatCardModule, MatProgressSpinnerModule, GameResultCardComponent],
-    }).compileComponents();
+    })
+      .overrideComponent(GameResultCardComponent, {
+        set: { changeDetection: ChangeDetectionStrategy.Default },
+      })
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -52,7 +57,7 @@ describe('GameResultCardComponent', () => {
     component.playerData = playerData;
     component.loading = false;
     fixture.detectChanges();
-    const playerName = fixture.debugElement.query(By.css('div')).nativeElement.textContent;
+    const playerName = fixture.debugElement.query(By.css('.name')).nativeElement.textContent;
     expect(playerName).toContain('Name: Luke Skywalker');
   });
 

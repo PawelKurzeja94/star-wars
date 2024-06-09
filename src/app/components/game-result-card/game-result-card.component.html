@@ -5,7 +5,7 @@
     }
 
     @if (playerData && !loading) {
-      <div>Name: {{ playerData.name }}</div>
+      <div class="name">Name: {{ playerData.name }}</div>
       <div>Created at: {{ playerData.created | date }}</div>
 
       @if (playerData.type === 'Person') {

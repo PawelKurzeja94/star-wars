@@ -47,7 +47,7 @@ export class GameStateService {
 
   // SUBSCRIBE HERE TO START THE GAME
   selectGame() {
-    return this.newGameTrigger$.pipe(
+    return this.newGameTrigger$.asObservable().pipe(
       tap(() => {
         this.gameLoading$.next(true);
         this.setLoadingState(this.playerOneGameState$, this.playerTwoGameState$);
