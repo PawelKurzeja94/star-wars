@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -13,6 +13,7 @@ import { GameResultCardComponent } from '../game-result-card/game-result-card.co
   imports: [MatButtonModule, CommonModule, GameResultCardComponent],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GameComponent {
   private gameStateService = inject(GameStateService);

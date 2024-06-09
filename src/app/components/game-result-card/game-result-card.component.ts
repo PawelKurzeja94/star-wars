@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MatCardModule } from '@angular/material/card';
@@ -12,6 +12,7 @@ import { Person, Starship } from '@shared/models';
   imports: [CommonModule, MatCardModule, MatProgressSpinnerModule],
   templateUrl: './game-result-card.component.html',
   styleUrl: './game-result-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GameResultCardComponent {
   @Input() playerData!: Person | Starship | null;
