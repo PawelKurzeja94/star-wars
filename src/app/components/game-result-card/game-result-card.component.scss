@@ -1,0 +1,15 @@
+.card {
+  height: 350px;
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bold {
+  font-weight: 500;
+}
+
+.winning-card {
+  background-color: greenyellow;
+}

@@ -1,0 +1,10 @@
+{
+  "result": {
+    "properties": {
+      "name": "Millennium Falcon",
+      "crew": "4",
+      "created": "2024-01-01T00:00:00Z",
+      "type": "Starship"
+    }
+  }
+}

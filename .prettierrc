@@ -1,0 +1,9 @@
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "singleQuote": true,
+  "bracketSameLine": false,
+  "printWidth": 200,
+  "htmlWhitespaceSensitivity": "ignore",
+  "arrowParens": "avoid"
+}

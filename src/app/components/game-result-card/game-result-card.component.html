@@ -1,0 +1,28 @@
+<mat-card class="card" [ngClass]="{ 'winning-card': winningCard && !loading }">
+  <mat-card-content>
+    @if (loading) {
+      <mat-spinner></mat-spinner>
+    }
+
+    @if (playerData && !loading) {
+      <div>Name: {{ playerData.name }}</div>
+      <div>Created at: {{ playerData.created | date }}</div>
+
+      @if (playerData.type === 'Person') {
+        <ng-container *ngIf="$any(playerData) as player">
+          <div class="bold">Mass: {{ player.mass }}</div>
+        </ng-container>
+      } 
+      
+      @if (playerData.type === 'Starship') {
+        <ng-container *ngIf="$any(playerData) as player">
+          <div class="bold">Crew: {{ player.crew }}</div>
+        </ng-container>
+      } 
+    } 
+    
+    @if (!playerData && !loading && showError) {
+      <div>There was an error while downloading the data. Try again!</div>
+    } 
+  </mat-card-content>
+</mat-card>

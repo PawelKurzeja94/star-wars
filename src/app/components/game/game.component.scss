@@ -1,0 +1,28 @@
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.player-card {
+  min-height: 5rem;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
